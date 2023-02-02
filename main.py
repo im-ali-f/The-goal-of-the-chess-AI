@@ -2993,7 +2993,7 @@ def kish_va_mate():
     len_white_king_move_list = len(white_king_move_list)
 
 
-    print("\n\n ################### natayej ########################")
+    print("\n\n ################### results ########################")
     ##### aval black ######
     A,B,C,D,E,F="","","","","",""
     if wehave_black_king==True:
@@ -3009,7 +3009,7 @@ def kish_va_mate():
                     print(black_friendly)
                     black_mate=0
                 elif temp_piece_len ==0:
-                    B="no one can attack enemy kisher"
+                    B="no one can attack enemy checker"
                     temp_friendly_move_len=len(last_black_piece_move)
                     if temp_friendly_move_len >0:
                         C = ""
@@ -3023,9 +3023,9 @@ def kish_va_mate():
                             black_mate=0
                     if temp_friendly_move_len == 0:
                         black_mate=1
-                        D="!!!!! Black Mate Shod !!!!!!"
+                        D="!!!!! Black Mate !!!!!!"
         else:
-            E="black king kish nashode !"
+            E="black king isnt checked !"
     else:
         F="we dont have black king in game! :)"
     ###### hala white ########
@@ -3043,7 +3043,7 @@ def kish_va_mate():
                     print(white_friendly)
                     white_mate = 0
                 elif temp_piece_len == 0:
-                    b="no one can attack enemy kisher"
+                    b="no one can attack enemy checker"
                     temp_friendly_move_len = len(last_white_piece_move)
                     if temp_friendly_move_len > 0:
                         c=""
@@ -3057,9 +3057,9 @@ def kish_va_mate():
                             white_mate = 0
                     if temp_friendly_move_len == 0:
                         white_mate = 1
-                        d="!!!!! white Mate Shod !!!!!!"
+                        d="!!!!! white Mate !!!!!!"
         else:
-            e="white king kish nashode !"
+            e="white king isnt checked !"
     else:
         f="we dont have white king in game! :)"
 
@@ -3083,11 +3083,11 @@ def kish_va_mate():
     if b_kish_count <=1:
         y = f"{A}\n{B}\n{C}\n{D}\n{E}\n{F}\n"
     else:
-        y="Black king nmitavanad bish az 1 bar kish shavad"
+        y="you cant check Black king twice or more "
     if w_kish_count<=1:
         x = f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n"
     else:
-        x = "white king nmitavanad bish az 1 bar kish shavad"
+        x = "you cant check white king twice or more "
     print(x)
     print(y)
     natije_show_white = Message(root,text=x )
@@ -3211,11 +3211,11 @@ for sq in square_list:
         counter_color += 1
     globals()[f"square_{j}{i}_show"].grid(row=j, column=i)
 
-asargozari_btn=Button(root,text="asar")
+asargozari_btn=Button(root,text="effect")
 asargozari_btn.configure(padx=10,pady=10,fg="red",bg="#E8F30B",command=asargozari_for_front,state=ACTIVE,font = myFont)
 asargozari_btn.grid(row=9, column=4)
 
-natije_btn=Button(root,text="natije")
+natije_btn=Button(root,text="result")
 natije_btn.configure(padx=10,pady=10,fg="red",bg="#E8F30B",command=kish_va_mate,state=DISABLED,font = myFont)
 natije_btn.grid(row=9, column=5)
 
